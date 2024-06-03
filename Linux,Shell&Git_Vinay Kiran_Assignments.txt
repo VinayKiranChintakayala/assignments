@@ -1,0 +1,621 @@
+Linux, Shell Script &  Git Assignments
+Name : Ch. Vinay Kiran
+===================================================================================================
+Git Assignments
+===================================================================================================
+Assignment-1 Initialize a new git repository in a directory of your choice. Add a simple text file to the repository and make the first commit.
+
+vkcha@Champion2k26 MINGW64 /
+$ echo "Git Assignments"
+Git Assignments
+
+vkcha@Champion2k26 MINGW64 /
+$ echo "Assignment-1 Initialize a new git repository in a directory of your choice. Add a simple text file to the repository and make the first commit."
+Assignment-1 Initialize a new git repository in a directory of your choice. Add a simple text file to the repository and make the first commit.
+
+vkcha@Champion2k26 MINGW64 /
+$ echo "To know our present working directory we use 'pwd' command"
+To know our present working directory we use 'pwd' command
+
+vkcha@Champion2k26 MINGW64 /
+$ pwd
+/
+
+vkcha@Champion2k26 MINGW64 /
+$ echo "To create a directory or a folder we use 'mkdir' command with folder name to create a folder"
+To create a directory or a folder we use 'mkdir' command with folder name to create a folder
+
+vkcha@Champion2k26 MINGW64 /
+$ mkdir git-training
+
+vkcha@Champion2k26 MINGW64 /
+$ echo "To go to the git-training folder we use 'cd' command"
+To go to the git-training folder we use 'cd' command
+
+vkcha@Champion2k26 MINGW64 /
+$ cd git-training
+
+vkcha@Champion2k26 MINGW64 /git-training
+$ echo "To know our present working directory we use 'pwd' command"
+To know our present working directory we use 'pwd' command
+
+vkcha@Champion2k26 MINGW64 /git-training
+$ pwd
+/git-training
+
+vkcha@Champion2k26 MINGW64 /git-training
+$ echo "we successfully moved to git-training"
+we successfully moved to git-training
+
+vkcha@Champion2k26 MINGW64 /git-training
+$ echo "Now to create a git repository we use 'git init' which will create a empty repository"
+Now to create a git repository we use 'git init' which will create a empty repository
+
+vkcha@Champion2k26 MINGW64 /git-training
+$ git init
+Initialized empty Git repository in F:/Git/git-training/.git/
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "created a empty repository"
+created a empty repository
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "Now to add a simple text file to the git repository we use 'touch' command"
+Now to add a simple text file to the git repository we use 'touch' command
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ touch simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "To check whether our text file is created or not we use 'ls' command"
+To check whether our text file is created or not we use 'ls' command
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ ls
+simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "We successfully created a text file 'simple.txt'"
+We successfully created a text file 'simple.txt'
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ vim simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "To know the status of the text file"
+To know the status of the text file
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        simple.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "As nothing added to commit we will add by 'git add'"
+As nothing added to commit we will add by 'git add'
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git add simple.txt
+warning: in the working copy of 'simple.txt', LF will be replaced by CRLF the next time Git touches it
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   simple.txt
+
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git commit -m "First commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'vkcha@Champion2k26.(none)')
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "To perform the commit operation we need to enter our email and user ids, For this step to perform one time we use global "
+To perform the commit operation we need to enter our email and user ids, For this step to perform one time we use global
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git config ==global user.email "vinaykiran535@gmail.com"
+error: key does not contain a section: ==global
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git config --global user.email "vinaykiran535@gmail.com"
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git config --global user.name "vinaykiran535"
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git commit
+Aborting commit due to empty commit message.
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git commit -m "First commit"
+[master (root-commit) 230a345] First commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "Completed Assignment-1"
+Completed Assignment-1
+==================================================================================================
+Assignment-2 Branch Creation and Switching, Create a new branch named 'feature' and switch to it. Make changes in the 'feature' branch and commit them.
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "Assignment-2 Branch Creation and Switching, Create a new branch named 'feature' and switch to it. Make changes in the 'feature' branch and commit them."
+Assignment-2 Branch Creation and Switching, Create a new branch named 'feature' and switch to it. Make changes in the 'feature' branch and commit them.
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "To create a branch we use 'git branch' command"
+To create a branch we use 'git branch' command
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git branch feature
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "To display the branch we use branch command"
+To display the branch we use branch command
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git branch
+  feature
+* master
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "Now to move to the sub-branch 'feature' from the master we use 'git checkout' command"
+Now to move to the sub-branch 'feature' from the master we use 'git checkout' command
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ echo "Now the changes we make in the feature branch will not effect the data in master"
+Now the changes we make in the feature branch will not effect the data in master
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ ls
+simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ vim simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ touch simple2.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ ls
+simple.txt  simple2.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ vim simple2.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ git add --all
+warning: in the working copy of 'simple.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'simple2.txt', LF will be replaced by CRLF the next time Git touches it
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ git status
+On branch feature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   simple.txt
+        new file:   simple2.txt
+
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ echo "Now committing the feature branch"
+Now committing the feature branch
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ git commit -m "feature branch committed"
+[feature 6d04355] feature branch committed
+ 2 files changed, 7 insertions(+)
+ create mode 100644 simple2.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ echo "Now to come back to the master branch we use checkout command"
+Now to come back to the master branch we use checkout command
+
+vkcha@Champion2k26 MINGW64 /git-training (feature)
+$ git checkout master
+Switched to branch 'master'
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "Assignment-2 done"
+Assignment-2 done
+===================================================================================================
+Assignment-3 Feature branches and hotfixes, Create a 'hotfix' branch to fix an issue in the main code. Merge the 'hotfix' branch into 'main' ensuring that the issue is resolved.
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "Assignment-3 Feature branches and hotfixes, Create a 'hotfix' branch to fix an issue in the main code. Merge the 'hotfix' branch into 'main' ensuring that the issue is resolved."
+Assignment-3 Feature branches and hotfixes, Create a 'hotfix' branch to fix an issue in the main code. Merge the 'hotfix' branch into 'main' ensuring that the issue is resolved.
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "Creating a hotfix branch: the hotfix branch is very important in the git as it is used in the critical times to fix immediate bugs or issue in the main code."
+Creating a hotfix branch: the hotfix branch is very important in the git as it is used in the critical times to fix immediate bugs or issue in the main code.
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git branch hotfixer
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git checkout hotfixer
+Switched to branch 'hotfixer'
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ echo "In the above steps we have created a hotfixer branch and switched to the hotfixer from the master or main code"
+In the above steps we have created a hotfixer branch and switched to the hotfixer from the master or main code
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ echo "To check wheather the hotfixer contains the main code"
+To check wheather the hotfixer contains the main code
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ ls
+simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ echo "It contains the simple.txt"
+It contains the simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ echo "To fix the bugs and issues in the hotfixer to go insize the main code by the vim command"
+To fix the bugs and issues in the hotfixer to go insize the main code by the vim command
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ vim simple.txt
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ git add --all
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ git status
+On branch hotfixer
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   simple.txt
+
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ echo "In the above statements we preformed all the bug fixes and saved the modification into the file"
+In the above statements we preformed all the bug fixes and saved the modification into the file
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ git commit -m "Modification and bug fixes are fixed in the hotfixer branch"
+[hotfixer 4bd005d] Modification and bug fixes are fixed in the hotfixer branch
+ 1 file changed, 4 insertions(+)
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ echo "Now we need to change to the master to access the modified code in the hotfixer branch"
+Now we need to change to the master to access the modified code in the hotfixer branch
+
+vkcha@Champion2k26 MINGW64 /git-training (hotfixer)
+$ git checkout master
+Switched to branch 'master'
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ git merge hotfixer
+Updating 230a345..4bd005d
+Fast-forward
+ simple.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "All the content in the hotfixer is overridden the code in the main"
+All the content in the hotfixer is overridden the code in the main
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ cat simple.txt
+Assignment-1
+Creating a new git repository and creating a simple.txt file
+Done!
+Assignment-3
+By using the hotfixer branch we access the data from the main code and fixing the immediate bugs and issues in the main code.
+After completing the bug fixes we merge the hotfixer branch to the main branch and we modify the data in the main code with the hofixer branch code.
+Done!
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "The modified main code"
+The modified main code
+
+vkcha@Champion2k26 MINGW64 /git-training (master)
+$ echo "Assignment-3 Done"
+Assignment-3 Done
+
+===================================================================================================
+Shell Scripting Assignments
+===================================================================================================
+Assignment-1 : Ensure the script checks if a specific file(eg. myfile.txt)exists in the current directory, if it exists print "File exists", otherwise print "File not found".
+
+read -p "Enter the target file name : " filename
+if [ -e "$filename" ];
+then
+        echo "File exists"
+else
+        echo "File not found"
+fi
+
+===================================================================================================
+Assignment - 2 : #Write a script that reads numbers from the user until they enter '0'. The script should also print whether each number is odd or even.
+
+echo "Enter the numbers to check whether even or odd"
+
+echo "Enter '0' to stop reading the numbers"
+while true;
+do
+        read -p "Enter the number : " number
+        if [ "$number" -eq 0 ];
+        then
+                echo " Stop reading the numbers"
+                break
+        fi
+        if [ $((number % 2)) -eq 0 ];
+        then
+                echo "The number $number is even"
+        else
+                echo "The number $number is odd"
+        fi
+done
+
+===================================================================================================
+Assignment - 3 : Create a function that takes a filename as an argument and prints the number of lines in the file. Call this function from your script with different filenames.
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ cat myfile.txt
+This is the myfile.txt
+This file is used in the assignment3
+
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ cat tempfile.txt
+This is a temporary file
+This file is used in the assignment3
+A
+B
+C
+D
+E
+::
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ cat shellfile.txt
+This is the shell file
+This is also used for the assignment3
+bye bye -tata
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ cat assignment3.sh
+#Assignment-3 Create a function that takes a filename as an argument and prints the number of lines in the file. Call this function from your script with different filenames.
+numOfLines()
+{
+        filename="$1"
+        if [ -e "$filename" ]
+        then
+                count=$(wc -l < "$filename")
+                echo "The count of the lines to $filename : $count"
+        else
+                echo "The filename is not found"
+        fi
+}
+numOfLines "myfile.txt"
+numOfLines "tempfile.txt"
+numOfLines "shellfile.txt"
+numOfLines "shell.txt"
+
+===================================================================================================
+Assignment 4: Write a script that creates a directory named TestDir and inside it, creates ten files named File1.txt, File2.txt, ... File10.txt. Each file should contain its filename as its content (e.g., File1.txt contains "File1.txt").
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ ls -la
+total 15
+drwxr-xr-x 1 vkcha 197609   0 May  9 19:04 ./
+drwxr-xr-x 1 vkcha 197609   0 May  9 15:46 ../
+drwxr-xr-x 1 vkcha 197609   0 May  9 19:05 TestDir/
+-rw-r--r-- 1 vkcha 197609 304 May  9 16:34 assignment1.sh
+-rw-r--r-- 1 vkcha 197609 491 May  9 17:18 assignment2.sh
+-rw-r--r-- 1 vkcha 197609 469 May  9 18:01 assignment3.sh
+-rw-r--r-- 1 vkcha 197609 521 May  9 19:04 assignment4.sh
+-rw-r--r-- 1 vkcha 197609  62 May  9 17:45 myfile.txt
+-rw-r--r-- 1 vkcha 197609  75 May  9 17:51 shellfile.txt
+-rw-r--r-- 1 vkcha 197609  75 May  9 17:48 tempfile.txt
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ cat assignment4.sh
+# Assignment-4 Write a script that creates a directory named TestDir and inside it, create 10 files names File1.txt....File10.txt, Each file should contain its filename as its content (eg.,File.txt contains"File.txt").
+        mkdir -p TestDir
+        read -p "Enter the number of files to create : " filenumber
+        for((filenum=1;filenum<=$filenumber;filenum++));
+        do
+                filename="File${filenum}.txt"
+                filepath="TestDir/${filename}"
+                echo "${filename}" > "${filepath}"
+        done
+        echo "Created all the $filenumber of files in the TestDir"
+
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ ./assignment4.sh
+Enter the number of files to create : 10
+Created all the 10 of files in the TestDir
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ #To check if the files are created we go to the TestDir folder
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ cd TestDir
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments/TestDir (master)
+$ ls -la
+total 18
+drwxr-xr-x 1 vkcha 197609  0 May  9 19:05 ./
+drwxr-xr-x 1 vkcha 197609  0 May  9 19:04 ../
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File1.txt
+-rw-r--r-- 1 vkcha 197609 11 May  9 19:07 File10.txt
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File2.txt
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File3.txt
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File4.txt
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File5.txt
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File6.txt
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File7.txt
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File8.txt
+-rw-r--r-- 1 vkcha 197609 10 May  9 19:07 File9.txt
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments/TestDir (master)
+$ #All the files are created successfully
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments/TestDir (master)
+$ Assignment 4 Done
+===================================================================================================
+Assignment 5: Modify the script to handle errors, such as the directory already existing or lacking permissions to create files.
+Add a debugging mode that prints additional information when enabled.
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ cd assignment5
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments/assignment5 (master)
+$ ls -l
+total 4
+drwxr-xr-x 1 vkcha 197609   0 May 10 08:21 assignment5/
+-rw-r--r-- 1 vkcha 197609 761 May 10 08:20 assignment5.sh
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments/assignment5 (master)
+$ cat assignment5.sh
+# Bash Script to modify the script to handle errors, such as directory already existing or lacking permissions to create files. Add a debugging mode that prints additional information when enabeld.
+
+debug()
+{
+        if [ "$debug_mode" = "true" ]
+        then
+                echo "Debug : $1"
+        fi
+}
+assignment5()
+{
+        if [ -d "$1" ]
+        then
+                echo "Error: Directory '$1' already present."
+                exit 1
+        elif ! mkdir -p "$1";
+        then
+                echo "Error: Unable to create directory '$1'"
+                exit 1
+        else
+                echo "Created Directory '$1' successfully"
+                debug "permission for '$1' : $(stat -c %a "$1")"
+        fi
+}
+if [ "$1" = "--debug" ]
+then
+        debug_mode="true"
+        shift
+else
+        debug_mode="false"
+fi
+if [ -z "$1" ]
+then
+        echo "Usage: $0 [--debug] assignment5"
+        exit 1
+fi
+assignment5="$1"
+assignment5 "$assignment5"
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments/assignment5 (master)
+$ ./assignment5.sh
+Usage: ./assignment5.sh [--debug] assignment5
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments/assignment5 (master)
+$ ./assignment5.sh [--debug] assignment5
+Created Directory '[--debug]' successfully
+
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments/assignment5 (master)
+$ # Assignment5 Done!
+
+===================================================================================================
+Assignment - 6 : Given a sample log file, write a script using grep to extract all lines containing "ERROR". Use awk to print the date, time, and error message of each extracted line. Data Processing with sed.
+
+vkcha@Champion2k26 MINGW64 /git-training/assignments (master)
+$ touch assignment6.sh
+
+vkcha@Champion2k26 MINGW64 /git-training/assignments (master)
+$ vim assignment6.log
+
+vkcha@Champion2k26 MINGW64 /git-training/assignments (master)
+$ vim assignment6.sh
+
+vkcha@Champion2k26 MINGW64 /git-training/assignments (master)
+$ cat assignment6.sh
+log_History="assignment6.log"
+grep "ERROR" "$log_History" | \
+        awk '{ print $1, $2, substr($0, index($0,$3)) }'| \
+        sed 's/^[^ ]* [^ ]* //'
+
+$ ./assignment6.sh
+2024-05-09 19:01:22.000 [ERROR] Connection error : Timeout occurred
+2024-05-09 19:04:11.000 [ERROR] Error occurred in assignment6
+
+vkcha@Champion2k26 MINGW64 /git-training/assignments (master)
+$ cat assignment6.log
+2024-05-09 18:58:21.000 [INFO] Assignment6 in progress
+2024-05-09 18:59:03.000 [WARNING] Time to complete the assignment6
+2024-05-09 19:01:22.000 [ERROR] Connection error : Timeout occurred
+2024-05-09 19:03:42.000 [INFO] Reentering to the assignment6
+2024-05-09 19:04:11.000 [ERROR] Error occurred in assignment6
+2024-05-09 19:07:28.000 [INFO] Completing the assignment6
+2024-05-09 19:08:35.000 [INFO] Successfully completed the assignment6
+2024-05-09 19:08:58.000 [WARNING] EXITING THE ASSIGNMENT6
+
+
+vkcha@Champion2k26 MINGW64 /git-training/assignments (master)
+$ #Assignment-6 Done
+===================================================================================================
+Assignment -7  Create a script that takes a text file and replaces all occurrences of "old_text" with "new_text". Use sed to perform this operation and output the result to a new file.
+vkcha@Champion2k26 MINGW64 /f/git/git-training/assignments (master)
+$ cat assignment7.sh
+# Assignment 7 - Replace the text in old file with the new file using sed operation.
+ if [ "$#" -ne 4 ];
+ then
+         echo "Usage: $0 <samplefile> <samplefile2> <old_text> <new_text>"
+         exit 1
+ fi
+ samplefile=$1
+ samplefile2=$2
+ old_text=$3
+ new_text=$4
+ if [ ! -f "$samplefile" ];
+ then
+         echo "Input file not found"
+         exit 1
+ fi
+ sed "s/$old_text/$new_text/g" "$samplefile" > "$samplefile2"
+ echo "The old_text is replaced with the new_text"
+ echo "The output saved to $samplefile2"
+
+vkcha@Champion2k26 MINGW64 /git-training/assignments (master)
+$ #Assignment-7 Done
+
