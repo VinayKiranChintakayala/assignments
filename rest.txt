@@ -1,0 +1,225 @@
+[10:24 AM] Anand
+package estassuredExamples;
+ 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+ 
+import io.restassured.RestAssured;
+import io.restassured.http.Header;
+import io.restassured.http.Headers;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+ 
+ 
+public class GetBooksDetails {
+	
+	@Test
+	public void GetBooksDetailsTest()
+	{
+		//Specify the base url
+		RestAssured.baseURI = "https://demoqa.com/BookStore/v1/Books";
+		//Get the request specification to be sent to the server
+		RequestSpecification  httpRequest = RestAssured.given();
+		//Specify the http method type
+		Response response = httpRequest.request(Method.GET);
+		//print the status and message of the response
+		System.out.println("Status received-> "+response.getStatusLine());
+		System.out.println("Status received-> "+response.getStatusCode());
+		System.out.println("Response=> "+ response.prettyPrint());
+		
+		int statusCode = response.getStatusCode();
+		//Assert to check the status
+		Assert.assertEquals(statusCode, 200,"Checking the status code");
+		System.out.println("Test case pass");
+	}
+	
+	@Test
+	public void iteratingHeaders()
+	{
+		RestAssured.baseURI = "https://demoqa.com/BookStore/v1/Books";
+		RequestSpecification httpRequest = RestAssured.given();
+		Response response = httpRequest.get("");
+		Headers allHeaders = response.headers();
+		
+		for(Header header: allHeaders)
+		{
+			System.out.println("Key: "+header.getName()+" Value: "+ header.getValue());
+			
+		}
+	}
+ 
+}
+ 
+[10:24 AM] Anand
+Key Features of RestAssured
+
+REST - Representational State Transfer - No GUI
+ 
+Fluent API: RestAssured provides a fluent interface that allows for readable and expressive test code.
+
+HTTP Methods Support: It supports all the HTTP methods such as GET, POST, PUT, DELETE, PATCH, HEAD, and OPTIONS.
+
+JSON and XML Support: Easily parse and validate JSON and XML responses.
+
+Authentication: Supports various types of authentication mechanisms, including Basic, OAuth, and OAuth2.
+
+Integration with Testing Frameworks: Integrates seamlessly with popular testing frameworks like JUnit and TestNG.
+
+Assertions: Provides a variety of ways to assert and validate the response data.
+ 
+Rest Assured
+
+Its open source, easy to implement -> Java library
+
+Setting up is easy
+
+Responses we get in JSON and XML formats
+
+Response time is faster 
+
+Assertions to check the status code -> validations
+
+It be can be integrated with TestNG and JUnit
+
+Authentication supported
+
+We can integrate with maven and CICD
+
+It follows BDD approach & keywords
+
+HTTP methods GET,POST,PUT,DELETE etc
+ 
+SOAP it does not support
+
+No inbuilt reporting in Rest Assured
+ 
+https://github.com/rest-assured/rest-assured/wiki/Downloads
+ =====================
+package estassuredExamples;
+ 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+ 
+import io.restassured.RestAssured;
+import io.restassured.http.Header;
+import io.restassured.http.Headers;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+ 
+ 
+public class GetBooksDetails {
+	
+	@Test
+	public void GetBooksDetailsTest()
+	{
+		//Specify the base url
+		RestAssured.baseURI = "https://demoqa.com/BookStore/v1/Books";
+		//Get the request specification to be sent to the server
+		RequestSpecification  httpRequest = RestAssured.given();
+		//Specify the http method type
+		Response response = httpRequest.request(Method.GET);
+		//print the status and message of the response
+		System.out.println("Status received-> "+response.getStatusLine());
+		System.out.println("Status received-> "+response.getStatusCode());
+		System.out.println("Response=> "+ response.prettyPrint());
+		
+		int statusCode = response.getStatusCode();
+		//Assert to check the status
+		Assert.assertEquals(statusCode, 200,"Checking the status code");
+		System.out.println("Test case pass");
+	}
+	
+	@Test
+	public void iteratingHeaders()
+	{
+		RestAssured.baseURI = "https://demoqa.com/BookStore/v1/Books";
+		RequestSpecification httpRequest = RestAssured.given();
+		Response response = httpRequest.get("");
+		Headers allHeaders = response.headers();
+		
+		for(Header header: allHeaders)
+		{
+			System.out.println("Key: "+header.getName()+" Value: "+ header.getValue());
+			
+		}
+	}
+ 
+}
+
+====================
+dependencies:
+ <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.21.0</version>
+	</dependency>
+	<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.4.0</version>
+    <scope>test</scope>
+	</dependency>
+	<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.8.0</version>
+	</dependency>
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.5</version>
+</dependency>
+<dependency>
+<groupId>org.apache.poi</groupId>
+<artifactId>poi</artifactId>
+<version>5.2.5</version>
+</dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.11.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>7.11.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-core</artifactId>
+    <version>7.11.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>5.4.0</version>
+    <scope>test</scope>
+</dependency>
+  	<dependency>
+  		<groupId>CucumberJava</groupId>
+  		<artifactId>CucumberJava</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.6</version>
+    </dependency>
+    <dependency>
+        <groupId>io.rest-assured</groupId>
+        <artifactId>json-schema-validator</artifactId>
+        <version>4.5.1</version>
+        <scope>test</scope>
+    </dependency>
